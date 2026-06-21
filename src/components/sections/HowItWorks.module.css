@@ -1,0 +1,86 @@
+.section {
+  background: #f9f9f9;
+  padding: clamp(48px, 8vw, 90px) 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 6vw, 80px);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: clamp(36px, 5vw, 64px);
+}
+.header h2 {
+  font-family: var(--font-geist);
+  font-weight: 600;
+  font-size: clamp(26px, 4.5vw, 48px);
+  line-height: 1.15;
+  text-transform: capitalize;
+}
+.header p {
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.55;
+  max-width: 580px;
+  margin: 14px auto 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+  margin-bottom: 48px;
+}
+.row.right {
+  flex-direction: row-reverse;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: clamp(20px, 2.5vw, 28px);
+  flex: 1;
+}
+.label {
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 10px;
+}
+.card h3 {
+  font-weight: 600;
+  font-size: clamp(18px, 2.5vw, 24px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.card p {
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.visual {
+  flex: 0 0 clamp(200px, 35%, 380px);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 10px 10px 28px rgba(0, 0, 0, 0.14);
+}
+
+@media (max-width: 640px) {
+  .row,
+  .row.right {
+    flex-direction: column;
+  }
+  .visual {
+    flex: none;
+    width: 100%;
+    box-shadow: none;
+  }
+}

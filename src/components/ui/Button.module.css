@@ -1,0 +1,26 @@
+.btn {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: var(--r-btn);
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: opacity 0.2s, transform 0.15s;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.fullWidth {
+  width: 100%;
+  display: block;
+}
