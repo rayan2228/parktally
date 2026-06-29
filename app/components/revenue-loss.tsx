@@ -1,7 +1,9 @@
+import { ChartDownIcon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import Container from "./ui/container";
-import Section from "./ui/section";
-import InfoBlock from "./ui/info-block";
 import FadeUp from "./ui/fade-up";
+import InfoBlock from "./ui/info-block";
+import Section from "./ui/section";
 
 export default function RevenueLoss() {
   return (
@@ -62,25 +64,28 @@ export default function RevenueLoss() {
             }
           >
             <div>
-              <h3
-                className="
+              <div className="flex gap-4">
+                <HugeiconsIcon icon={ChartDownIcon} />
+                <h3
+                  className="
                   text-2xl
                   font-semibold
+                  
                 "
-              >
-                Reasons for Loss
-                of Revenue
-              </h3>
+                >
+                  Reasons for Loss
+                  of Revenue
+                </h3>
+              </div>
 
               <p
                 className="
+                max-w-125
                   mt-3
                   text-zinc-500
                 "
               >
-                Manual systems are
-                prone to errors and
-                manipulation.
+                Manual systems are prone to errors and manipulation. We identify and seal every loophole.
               </p>
             </div>
 

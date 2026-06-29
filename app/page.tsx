@@ -4,7 +4,6 @@ import Footer from "./components/footer";
 import Hero from "./components/hero";
 import HowItWorks from "./components/how-it-works";
 import Impact from "./components/impact";
-import Navbar from "./components/navbar";
 import Profitable from "./components/profitable";
 import RevenueLoss from "./components/revenue-loss";
 import Team from "./components/team";
