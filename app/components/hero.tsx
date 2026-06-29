@@ -1,9 +1,11 @@
 import Image from "next/image";
+import Navbar from "./navbar";
 import FadeUp from "./ui/fade-up";
 
 export default function Hero() {
     return (
-        <section className="">
+        <section className="mt-12 relative">
+            <Navbar />
             <FadeUp>
                 <div
                     className="
@@ -25,6 +27,7 @@ export default function Hero() {
                         width={1320}
                         height={625}
                     />
+
                 </div>
             </FadeUp>
 
@@ -44,16 +47,14 @@ export default function Hero() {
                 <FadeUp delay={0.1}>
                     <h1
                         className="
-              font-[var(--font-geist)]
+            font-geist
+            font-semibold
               text-4xl
-              font-semibold
               leading-tight
-              md:text-6xl
+              md:text-5xl
             "
                     >
-                        We Stop Parking Revenue
-                        Leakage with AI Number
-                        Plate Detection
+                        We Stop Parking Revenue Leakage with AI Number Plate Detection
                     </h1>
                 </FadeUp>
 
@@ -61,15 +62,12 @@ export default function Hero() {
                     <p
                         className="
               mt-6
-              max-w-3xl
+              max-w-140
               text-lg
               text-zinc-600
             "
                     >
-                        Automated vehicle entry,
-                        real-time tracking and full
-                        revenue transparency for
-                        parking operators and owners.
+                        Automated vehicle entry, real-time tracking, and full revenue transparency for parking operators & owners.
                     </p>
                 </FadeUp>
 

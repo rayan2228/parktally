@@ -13,7 +13,7 @@ import Team from "./components/team";
 export default function HomePage() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <RevenueLoss />
       <Features />

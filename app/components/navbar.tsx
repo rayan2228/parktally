@@ -4,10 +4,10 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-
 import useScroll from "../hooks/use-scroll";
 import { NAV_LINKS } from "../lib/constants";
 import Container from "./ui/container";
+import Image from "next/image";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
@@ -18,29 +18,21 @@ export default function Navbar() {
         <>
             <nav
                 className={`
-          sticky
-          top-0
-          z-50
-          transition-all
-          duration-300
-          backdrop-blur-md
-
-          ${scrolled
-                        ? "border-b border-zinc-200 bg-white/90"
-                        : "bg-white/70"
-                    }
-        `}
+                    absolute
+                    w-full
+                    -top-5
+                    z-50
+                    transition-all
+                    duration-300
+                `}
             >
                 <Container>
-                    <div className="flex h-20 items-center justify-between">
+                    <div className="flex flex-col items-center justify-center">
                         <Link
                             href="/"
-                            className="text-2xl font-bold tracking-tight"
+                            className="text-2xl font-bold tracking-tight mb-2"
                         >
-                            <span className="text-primary">
-                                Park
-                            </span>
-                            <span>Tally</span>
+                          <Image src={"/images/logo.png"} width={120} height={35.67} alt="parktally logo"/>
                         </Link>
 
                         <div className="hidden items-center gap-2 md:flex">
@@ -49,28 +41,35 @@ export default function Navbar() {
                                     key={item.label}
                                     href={item.href}
                                     className="
-                    rounded-full
-                    px-4
-                    py-2
-                    text-sm
-                    text-zinc-600
-                    transition-all
-                    hover:bg-primary/10
-                  "
+                                        rounded-full
+                                        px-4
+                                        py-2
+                                        text-sm
+                                        text-zinc-600
+                                        transition-all
+                                        hover:bg-primary
+                                        hover:text-white
+                                    "
                                 >
                                     {item.label}
                                 </Link>
                             ))}
                         </div>
 
+                        {/* ✅ Mobile hamburger — only change here */}
                         <button
                             onClick={() => setOpen(true)}
                             className="
-                flex
-                items-center
-                justify-center
-                md:hidden
-              "
+                                absolute
+                                right-4
+                                top-1/2
+                                -translate-y-1/2
+                                flex
+                                items-center
+                                justify-center
+                                md:hidden
+                            "
+                            aria-label="Open menu"
                         >
                             <Menu size={26} />
                         </button>
@@ -78,10 +77,7 @@ export default function Navbar() {
                 </Container>
             </nav>
 
-            <MobileMenu
-                open={open}
-                onClose={() => setOpen(false)}
-            />
+            <MobileMenu open={open} onClose={() => setOpen(false)} />
         </>
     );
 }
@@ -91,48 +87,42 @@ interface MobileProps {
     onClose: () => void;
 }
 
-function MobileMenu({
-    open,
-    onClose,
-}: MobileProps) {
+function MobileMenu({ open, onClose }: MobileProps) {
     if (!open) return null;
 
     return (
         <div
             className="
-        fixed
-        inset-0
-        z-60
-        flex
-        flex-col
-        bg-white
-      "
+                fixed
+                inset-0
+                z-60
+                flex
+                flex-col
+                bg-white
+            "
         >
             <div className="flex justify-end p-6">
-                <button onClick={onClose}>
+                <button onClick={onClose} aria-label="Close menu">
                     <X size={28} />
                 </button>
             </div>
 
             <div
                 className="
-          flex
-          flex-1
-          flex-col
-          items-center
-          justify-center
-          gap-8
-        "
+                    flex
+                    flex-1
+                    flex-col
+                    items-center
+                    justify-center
+                    gap-8
+                "
             >
                 {NAV_LINKS.map((item) => (
                     <Link
                         key={item.label}
                         href={item.href}
                         onClick={onClose}
-                        className="
-              text-2xl
-              font-medium
-            "
+                        className="text-2xl font-medium"
                     >
                         {item.label}
                     </Link>
@@ -140,13 +130,13 @@ function MobileMenu({
 
                 <button
                     className="
-            mt-8
-            rounded-xl
-            bg-primary
-            px-8
-            py-4
-            text-white
-          "
+                        mt-8
+                        rounded-xl
+                        bg-primary
+                        px-8
+                        py-4
+                        text-white
+                    "
                 >
                     Request Demo
                 </button>
