@@ -11,7 +11,7 @@ export default function Profitable() {
                 <FadeUp>
                     <SectionTitle
                         title="Let's Make Your Parking System More Profitable"
-                        description="Generate more revenue with AI-powered parking automation."
+                        description="Lorem ipsum dolor sit amet consectetur. Nullam gravida scelerisque sit id augue urna nibh erat. Pretium varius odio cursus nulla nisi. Conse"
                     />
                 </FadeUp>
 

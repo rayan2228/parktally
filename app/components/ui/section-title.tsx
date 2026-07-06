@@ -8,13 +8,13 @@ export default function SectionTitle({
   description,
 }: Props) {
   return (
-    <div className="mx-auto mb-16 max-w-3xl text-center">
-      <h2 className="font-[var(--font-geist)] text-4xl font-semibold md:text-5xl">
+    <div className="mx-auto mb-16  text-center">
+      <h2 className="font-geist text-4xl font-semibold ">
         {title}
       </h2>
 
       {description && (
-        <p className="mt-4 text-sm leading-7 text-gray-500">
+        <p className="mt-4 text-sm leading-7 text-gray-500 font-light max-w-159 mx-auto">
           {description}
         </p>
       )}

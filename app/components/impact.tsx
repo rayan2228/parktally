@@ -7,7 +7,7 @@ export default function Impact() {
     return (
         <Section
             id="impact"
-            className="bg-white"
+            className="bg-white font-poppins"
         >
             <Container>
                 <FadeUp>
@@ -26,6 +26,8 @@ export default function Impact() {
                                 className="
                   text-4xl
                   font-semibold
+                  font-geist
+                  max-w-126
                 "
                             >
                                 The Impact Of Our
@@ -38,12 +40,10 @@ export default function Impact() {
                   max-w-xl
                   text-zinc-500
                   leading-7
+                  font-light text-sm
                 "
                             >
-                                Maximize revenue,
-                                reduce labor costs
-                                and automate parking
-                                operations through AI.
+                           Maximize your revenue, slash operational costs, and drastically reduce entry times with our automated solution.
                             </p>
                         </div>
 
@@ -92,7 +92,7 @@ export default function Impact() {
                                     </th>
 
                                     <th className="py-4 text-left">
-                                        ParkTally
+                                        Using Our ParkTally
                                     </th>
                                 </tr>
                             </thead>
@@ -150,21 +150,20 @@ function TableRow({
             className="
         border-b
         border-zinc-200
+        text-zinc-500
       "
         >
-            <td className="py-5">
+            <td className="py-5  ">
                 {feature}
             </td>
 
-            <td className="py-5 text-zinc-500">
+            <td className="py-5 ">
                 {oldValue}
             </td>
 
             <td
                 className="
           py-5
-          font-medium
-          text-primary
         "
             >
                 {newValue}

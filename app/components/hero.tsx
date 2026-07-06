@@ -26,6 +26,7 @@ export default function Hero() {
             "
                         width={1320}
                         height={625}
+                        loading="eager"
                     />
 
                 </div>

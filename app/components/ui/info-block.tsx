@@ -28,7 +28,7 @@ export default function InfoBlock({
           bg-white
           p-8
           shadow-sm
-          lg:w-[340px]
+          lg:w-101.75
         "
       >
         {sidebar}
@@ -38,7 +38,7 @@ export default function InfoBlock({
         className="
           flex-1
           rounded-3xl
-          bg-[#fbfbfb]
+          bg-bg-subtle
           p-8
         "
       >

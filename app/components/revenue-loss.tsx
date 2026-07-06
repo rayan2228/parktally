@@ -4,12 +4,13 @@ import Container from "./ui/container";
 import FadeUp from "./ui/fade-up";
 import InfoBlock from "./ui/info-block";
 import Section from "./ui/section";
+import Image from "next/image";
 
 export default function RevenueLoss() {
   return (
     <Section
       id="how"
-      className="bg-white"
+      className="bg-white font-poppins! pb-[31.5px]!"
     >
       <Container>
         <FadeUp>
@@ -31,6 +32,7 @@ export default function RevenueLoss() {
                     mt-6
                     text-3xl
                     font-semibold
+                    font-geist
                   "
                 >
                   How Parking Owners
@@ -41,11 +43,12 @@ export default function RevenueLoss() {
                   className="
                     mt-4
                     text-zinc-500
+                    font-light
+                    text-sm
                   "
                 >
-                  Manual systems are
-                  prone to errors and
-                  manipulation.
+                  Manual systems are prone to errors and manipulation. We identify and seal every
+                  loophole.
                 </p>
 
                 <button
@@ -65,12 +68,11 @@ export default function RevenueLoss() {
           >
             <div>
               <div className="flex gap-4">
-                <HugeiconsIcon icon={ChartDownIcon} />
+                <HugeiconsIcon icon={ChartDownIcon} size={40} />
                 <h3
                   className="
-                  text-2xl
+                  text-[32px]
                   font-semibold
-                  
                 "
                 >
                   Reasons for Loss
@@ -80,9 +82,10 @@ export default function RevenueLoss() {
 
               <p
                 className="
-                max-w-125
+                max-w-125.25
                   mt-3
                   text-zinc-500
+                  font-light
                 "
               >
                 Manual systems are prone to errors and manipulation. We identify and seal every loophole.
@@ -100,21 +103,24 @@ export default function RevenueLoss() {
             >
               <Card
                 title="Cash Manipulation"
-                description="Lack of digital logs allows manual ticket tampering and pocketing of fees."
+                description="Lack of digital logs allows manual ticket tampering and pocketing of parking fees by staff."
               />
 
               <Card
-                title="Unauthorized Entry"
-                description="Vehicles entering without records through favoritism or broken protocols."
+                title="Unauthorized Entry or exit"
+                description={`Vehicles entering without records through "favoritism" or broken physical
+gate protocols.`}
               />
 
               <Card
                 title="No Real-time Tracking"
-                description="Impossible to know occupancy or dwell time accurately."
+                description="Impossible to know exact occupancy or dwell time, leading to inefficient space
+utilization."
               />
             </div>
           </InfoBlock>
         </FadeUp>
+        <Image src={"/icons/down-arrow.svg"} alt="down arrow" width={547} height={220} className="m-auto" />
       </Container>
     </Section>
   );
@@ -134,12 +140,13 @@ function Card({
         bg-white
         p-6
         shadow-sm
+        font-poppins
       "
     >
       <h4
         className="
-          text-lg
-          font-semibold
+          text-xl
+          font-medium
         "
       >
         {title}
@@ -151,6 +158,7 @@ function Card({
           text-sm
           leading-6
           text-zinc-500
+          font-light
         "
       >
         {description}

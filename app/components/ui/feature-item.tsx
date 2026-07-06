@@ -14,7 +14,7 @@ export default function FeatureItem({
       className="
         flex
         items-center
-        gap-4
+        gap-2
         rounded-2xl
         bg-white
         p-4
@@ -29,8 +29,6 @@ export default function FeatureItem({
           items-center
           justify-center
           rounded-lg
-          bg-primary/10
-          text-primary
         "
       >
         {icon}

@@ -20,7 +20,6 @@ export default function Navbar() {
                 className={`
                     absolute
                     w-full
-                    -top-5
                     z-50
                     transition-all
                     duration-300
@@ -32,7 +31,7 @@ export default function Navbar() {
                             href="/"
                             className="text-2xl font-bold tracking-tight mb-2"
                         >
-                          <Image src={"/images/logo.png"} width={120} height={35.67} alt="parktally logo"/>
+                          <Image src={"/images/logo.png"} className="w-auto h-auto" width={120} height={35} alt="parktally logo" loading="eager"/>
                         </Link>
 
                         <div className="hidden items-center gap-2 md:flex">
