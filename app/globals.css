@@ -44,3 +44,22 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Infinite vertical marquee for the HowItWorks road centerline — always
+   running, independent of scroll position, to suggest continuous motion.
+   Paused under prefers-reduced-motion since it never stops on its own. */
+@media (prefers-reduced-motion: no-preference) {
+  .road-dash-track {
+    animation: road-dash 1.6s linear infinite;
+  }
+}
+
+@keyframes road-dash {
+  from {
+    background-position-y: 0;
+  }
+
+  to {
+    background-position-y: 76px;
+  }
+}
