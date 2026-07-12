@@ -36,11 +36,16 @@ export default function HowItWorks() {
       const gateClosedEl = q("[data-road-gate-closed]")[0];
       const gateOpenEl = q("[data-road-gate-open]")[0];
 
-      // Resting state: car hidden (plays in once below), gate closed, every
-      // flagged overlay + step panel hidden except the first step.
+      // Resting state: car hidden (plays in once below), every flagged
+      // overlay + step panel hidden except the first step. The gate post
+      // (gateClosedEl) is the fixed housing — it stays visible the whole
+      // time the gate is on screen. The striped arm (gateOpenEl) is the
+      // moving part: extended (scaleX 1) blocks the road by default, and
+      // retracts toward the post (scaleX 0, anchored at its left/origin
+      // edge where the post sits) when the gate opens.
       gsap.set(carEl, { autoAlpha: 0, y: -160 });
       gsap.set(gateClosedEl, { autoAlpha: 1 });
-      gsap.set(gateOpenEl, { autoAlpha: 0 });
+      gsap.set(gateOpenEl, { autoAlpha: 1, scaleX: 1, transformOrigin: "left center" });
       gsap.set([slotSignEl, cameraRayEl, ticketEl, cashEl], { autoAlpha: 0 });
 
       steps.forEach((step, i) => {
@@ -87,15 +92,14 @@ export default function HowItWorks() {
         tl.to(target, { autoAlpha: 0, duration: end - outStart }, outStart);
       };
 
-      // Like pulseAt, but swaps the two barrier elements instead of fading
-      // one target — the gate opens, then closes again by the end of the
-      // step (unlike gateOpen below, which opens once and stays open).
+      // The striped arm slides smoothly into the post (scaleX -> 0) rather
+      // than popping via opacity, then slides back out to block the road
+      // again by the end of the step (unlike gateOpen below, which opens
+      // once and stays open). The post itself never moves.
       const gatePulseAt = (index: number) => {
         const { start, inEnd, outStart, end } = stepWindow(index, total);
-        tl.to(gateOpenEl, { autoAlpha: 1, duration: inEnd - start }, start);
-        tl.to(gateClosedEl, { autoAlpha: 0, duration: inEnd - start }, start);
-        tl.to(gateOpenEl, { autoAlpha: 0, duration: end - outStart }, outStart);
-        tl.to(gateClosedEl, { autoAlpha: 1, duration: end - outStart }, outStart);
+        tl.to(gateOpenEl, { scaleX: 0, duration: inEnd - start, ease: "power2.inOut" }, start);
+        tl.to(gateOpenEl, { scaleX: 1, duration: end - outStart, ease: "power2.inOut" }, outStart);
       };
 
       steps.forEach((step, i) => {
@@ -123,8 +127,7 @@ export default function HowItWorks() {
       const gateOpenIndex = steps.findIndex((step) => step.gateOpen);
       if (gateOpenIndex !== -1) {
         const { start, inEnd } = stepWindow(gateOpenIndex, total);
-        tl.to(gateOpenEl, { autoAlpha: 1, duration: inEnd - start }, start);
-        tl.to(gateClosedEl, { autoAlpha: 0, duration: inEnd - start }, start);
+        tl.to(gateOpenEl, { scaleX: 0, duration: inEnd - start, ease: "power2.inOut" }, start);
       }
 
       // The camera and gate are absent from the reference during "Auto

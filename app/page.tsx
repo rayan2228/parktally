@@ -21,7 +21,7 @@ export default function HomePage() {
       <Profitable />
       <Team />
       <CTA />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

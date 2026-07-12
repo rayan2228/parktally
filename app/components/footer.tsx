@@ -3,9 +3,9 @@ import Container from "./ui/container";
 
 export default function Footer() {
     return (
-        <footer className="border-t border-zinc-200 bg-white">
+        <footer className="border-b pb-8 pt-28">
             <Container>
-                <div className="flex flex-col gap-8 py-8 md:flex-row md:items-center md:justify-between">
+                <div className="flex flex-col gap-8  md:flex-row md:items-center md:justify-between">
                     <Link
                         href="/"
                         className="text-2xl font-bold"
@@ -23,10 +23,6 @@ export default function Footer() {
                         <Link href="#impact">Pricing</Link>
                         <Link href="#">Dashboard</Link>
                     </div>
-                </div>
-
-                <div className="border-t border-zinc-200 py-6 text-center text-sm text-zinc-500">
-                    © 2026 ParkTally. All rights reserved.
                 </div>
             </Container>
         </footer>

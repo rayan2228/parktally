@@ -2,6 +2,7 @@
 
 import { Mail } from "lucide-react";
 import FadeUp from "./ui/fade-up";
+import Footer from "./footer";
 
 export default function CTA() {
     return (
@@ -11,9 +12,8 @@ export default function CTA() {
         bg-linear-to-b
         from-transparent
         to-blue-100
-        px-5
-        py-28
         text-center
+        px-8
       "
         >
             <FadeUp>
@@ -74,6 +74,10 @@ export default function CTA() {
                     </button>
                 </div>
             </FadeUp>
+            <Footer />
+            <div className=" text-center text-sm text-zinc-500 py-8">
+                © 2026 ParkTally. All rights reserved     |     Powered by Wings, Institute of Research, Innovation, Incubation and Commercialization
+            </div>
         </section>
     );
 }

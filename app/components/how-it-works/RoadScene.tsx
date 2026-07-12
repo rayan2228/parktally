@@ -123,22 +123,22 @@ const RoadScene = () => {
             Wrapped in data-road-gate so, like the camera, the whole unit can
             hide together during "Auto Count the Parking Time" / "Car Exit". */}
         <div data-road-gate className="absolute inset-x-[9%] bottom-[14%]">
-          <div data-road-gate-closed className="absolute inset-x-0">
+          <div className="absolute inset-x-0 left-0">
             <Image
-              src="/images/barrier-closed.png"
-              alt="Closed parking barrier"
-              width={724}
+              data-road-gate-closed
+              src="/images/barrier-gate.png"
+              alt=" parking gate"
+              width={40}
               height={156}
-              className="h-auto w-full"
+              className="z-20 relative"
             />
-          </div>
-          <div data-road-gate-open className="absolute inset-x-0">
             <Image
-              src="/images/barrier-open.png"
-              alt="Open parking barrier"
-              width={214}
-              height={156}
-              className="h-auto w-[45%]"
+              data-road-gate-open
+              src="/images/barrier.png"
+              alt=" parking barrier"
+              width={720}
+              height={155}
+              className="absolute top-1/2 left-0 origin-left -translate-y-1/2"
             />
           </div>
         </div>
