@@ -1,21 +1,5 @@
 "use client";
 
-// HowItWorks.tsx
-// -----------------------------------------------------------------------------
-// "How to work our system" — pinned vertical scrollytelling section.
-// Rebuilt from Figma (fileKey 5PBRANPH8zqiGXEBIYEQTm, scenes 1-11).
-//
-// Driven by a single GSAP timeline attached to one scrubbed, pinned
-// ScrollTrigger — every step's text crossfade and every road-scene icon
-// pulse is just a tween on that one timeline, positioned via `stepWindow`'s
-// 0..1 fractions (the timeline's own duration is 1, so scroll progress maps
-// directly onto timeline time). This replaced an earlier framer-motion
-// version built from ~30 independent `useTransform` subscriptions to a
-// shared scroll MotionValue — functionally fine, but visibly janky under
-// real scroll load. One ScrollTrigger + one timeline is GSAP's intended
-// shape for this exact use case and is dramatically cheaper per scroll tick.
-// -----------------------------------------------------------------------------
-
 import { useCallback, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -179,27 +163,16 @@ export default function HowItWorks() {
       className="how-it-works relative w-full h-screen overflow-hidden bg-white"
       aria-label="How our parking system works"
     >
-      {/* Top bar + section heading (Figma "Frame 78") */}
-      <div className="absolute inset-x-0 top-0 z-20 flex h-[81px] w-full items-center bg-white px-[6%]">
-        <h2 className="font-poppins m-0 max-w-[510px] text-3xl font-semibold capitalize leading-[1.1] text-black md:text-5xl">
-          How to work our system
-        </h2>
-      </div>
-      <div className="absolute inset-x-0 top-[154px] z-10 h-px w-full bg-border-custom" />
 
-      {/* Fade masks matching Figma's top/bottom gradient overlays */}
-      <div className="pointer-events-none absolute inset-x-0 top-[81px] z-10 h-[150px] w-full bg-gradient-to-b from-white to-white/0" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[150px] w-full bg-gradient-to-t from-white to-white/0" />
-
-      {/* Two-column stage: road scene on the left, step text on the right.
-          Neither column ever translates horizontally — only the content
-          driven by the GSAP timeline fades/slides vertically in place. */}
-      <div className="grid h-full grid-cols-1 items-center gap-4 px-[6%] pt-[81px] md:grid-cols-2 md:gap-12">
-        <div className="h-[40%] md:h-full">
+      <div className="grid h-full grid-cols-1 items-center gap-4 px-[6%]  md:grid-cols-2 md:gap-12">
+        <div className="h-40% md:h-full">
           <RoadScene />
         </div>
 
-        <div className="relative h-[45%] w-full max-w-[520px] md:h-[60%]">
+        <div className="relative h-[45%] w-full  md:h-[60%]">
+          <h2 className="font-poppins m-0 max-w-127.5 text-3xl font-semibold capitalize leading-[1.1] text-black md:text-5xl">
+            How to work our system
+          </h2>
           {steps.map((step, i) => (
             <StepContent
               key={step.id}

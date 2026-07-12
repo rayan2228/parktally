@@ -17,7 +17,7 @@ import Image from "next/image";
 const RoadScene = () => {
   return (
     <div className="road-scene pointer-events-none relative flex h-full w-full items-center justify-center">
-      <div className="relative h-[85%] w-[320px] max-w-[85%]">
+      <div className="relative h-[60%] w-[320px] max-w-[85%]">
         {/* Road surface: asphalt strip + shoulder lines (static, decorative) */}
         <div className="absolute inset-0 overflow-hidden rounded-sm bg-border-custom">
           <div className="absolute inset-y-0 left-0 w-[14%] bg-[#dfdfdf]" />
@@ -41,28 +41,24 @@ const RoadScene = () => {
             view, then (at the "Car Exit" step) slides further down and out.
             Sized/positioned to match the Figma reference (scene 2.png):
             car spans ~52% of the road's width, starting ~11% from the top. */}
-        <div
-          data-road-car
-          className="absolute left-1/2 top-[11%] w-[52%] -translate-x-1/2"
-        >
+        <div data-road-car>
           <Image
-            src="/images/car.png"
+            src="/images/car 2.png"
             alt="Parked car, top-down view"
-            width={966}
-            height={966}
-            className="h-auto w-full drop-shadow-[0_12px_20px_rgba(0,0,0,0.18)]"
+            width={230}
+            height={320}
             priority
+            className="absolute top-0 left-1/2 -translate-x-1/2"
           />
         </div>
+
+
 
         {/* Dashed "P / Slot 02" parking-bay outline — only during step 04. */}
         <div
           data-road-slot-sign
-          className="absolute left-1/2 top-[6%] flex h-[62%] w-[92%] -translate-x-1/2 flex-col items-center justify-end gap-2 rounded-md border-[3px] border-dashed border-[#6e62e5] pb-3"
+          className="absolute left-1/2 top-[4%] flex h-[70%] w-[70%] -translate-x-1/2 flex-col items-center justify-end gap-2 rounded-md border-[5px] border-dashed border-white pb-3"
         >
-          <span className="font-poppins rounded bg-[#6e62e5] px-2 py-0.5 text-xs font-medium capitalize text-white">
-            Slot 02
-          </span>
         </div>
 
         {/* Plate-scanner camera + detection ray — mounted at the road's
@@ -72,10 +68,10 @@ const RoadScene = () => {
             from the reference during "Auto Count the Parking Time" and
             "Car Exit"). Ray flashes during the two "Number Plate Detection"
             steps. */}
-        <div data-road-camera className="absolute right-[2%] top-[66%] w-[14%]">
+        <div data-road-camera className="absolute right-[2%] top-[76%] w-[14%]">
           <div
             data-road-camera-ray
-            className="absolute right-[95%] top-1/2 w-[380%] origin-right -translate-y-1/2 rotate-6"
+            className="absolute right-[70%] top-[10%] w-[380%] origin-right -translate-y-1/2 rotate-6"
           >
             <Image
               src="/images/camera-ray.png"
@@ -98,7 +94,7 @@ const RoadScene = () => {
             window (matching the reference: it sits alongside the car's own
             body, not down by the gate). Flashes during verification +
             billing. */}
-        <div data-road-ticket className="absolute right-[6%] top-[36%] w-[10%]">
+        <div data-road-ticket className="absolute right-[6%] top-[36%] w-[16%]">
           <Image
             src="/images/ticket.png"
             alt="Printed parking ticket"
@@ -110,7 +106,7 @@ const RoadScene = () => {
 
         {/* Cash-in-hand billing icon — handed over at the same window as the
             ticket above. Flashes during "Receive Bill". */}
-        <div data-road-cash className="absolute right-[4%] top-[35%] w-[15%]">
+        <div data-road-cash className="absolute right-[10%] top-[32%] w-[30%]">
           <Image
             src="/images/money.png"
             alt="Cash payment"
