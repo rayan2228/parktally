@@ -4,7 +4,7 @@ import FadeUp from "./ui/fade-up";
 
 export default function Hero() {
     return (
-        <section className="mt-12 relative">
+        <section className="mt-12 relative bg-linear-to-l from-[#F9F9F9] to-[#F8F8F8]">
             <Navbar />
             <FadeUp>
                 <div
@@ -55,7 +55,7 @@ export default function Hero() {
               md:text-5xl
             "
                     >
-                        We Stop Parking Revenue Leakage with AI Number Plate Detection
+                        Transform Parking Operations with AI-Powered Security and Revenue Control.
                     </h1>
                 </FadeUp>
 
@@ -63,12 +63,13 @@ export default function Hero() {
                     <p
                         className="
               mt-6
-              max-w-140
+            max-w-221.5
               text-lg
-              text-zinc-600
+              text-primary-black
+              leading-[160%]
             "
                     >
-                        Automated vehicle entry, real-time tracking, and full revenue transparency for parking operators & owners.
+                        Automate vehicle entry, billing and parking operations with real-time intelligence built for hospitals, shopping malls, commercial or residential buildings and smart cities.
                     </p>
                 </FadeUp>
 
@@ -79,10 +80,9 @@ export default function Hero() {
               rounded-xl
               bg-primary
               px-8
-              py-4
+              py-3
               text-white
-              transition-all
-              hover:-translate-y-1
+              translate-y-1/2
             "
                     >
                         Request For Demo

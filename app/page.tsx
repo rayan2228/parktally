@@ -1,6 +1,5 @@
 import CTA from "./components/cta";
 import Features from "./components/features";
-import Footer from "./components/footer";
 import Hero from "./components/hero";
 import HowItWorks from "./components/how-it-works/HowItWorks";
 import Impact from "./components/impact";
@@ -12,7 +11,6 @@ import Team from "./components/team";
 export default function HomePage() {
   return (
     <>
-      {/* <Navbar /> */}
       <Hero />
       <RevenueLoss />
       <Features />
@@ -21,7 +19,6 @@ export default function HomePage() {
       <Profitable />
       <Team />
       <CTA />
-      {/* <Footer /> */}
     </>
   );
 }

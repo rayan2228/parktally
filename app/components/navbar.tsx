@@ -31,7 +31,7 @@ export default function Navbar() {
                             href="/"
                             className="text-2xl font-bold tracking-tight mb-2"
                         >
-                          <Image src={"/images/logo.png"} className="w-auto h-auto" width={120} height={35} alt="parktally logo" loading="eager"/>
+                            <Image src={"/images/logo.png"} className="w-auto h-auto" width={120} height={35} alt="parktally logo" loading="eager" />
                         </Link>
 
                         <div className="hidden items-center gap-2 md:flex">
@@ -40,6 +40,7 @@ export default function Navbar() {
                                     key={item.label}
                                     href={item.href}
                                     className="
+                                    font-poppins
                                         rounded-full
                                         px-4
                                         py-2
@@ -121,7 +122,7 @@ function MobileMenu({ open, onClose }: MobileProps) {
                         key={item.label}
                         href={item.href}
                         onClick={onClose}
-                        className="text-2xl font-medium"
+                        className="text-2xl font-medium font-poppins"
                     >
                         {item.label}
                     </Link>

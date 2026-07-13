@@ -17,9 +17,16 @@ body {
   background: #f9f9f9;
 }
 
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+}
+
 @theme {
   --color-primary: #027ef9;
   --color-primary-light: #e1f0ff;
+  --color-primary-black: #636363;
   --color-gray-custom: #636363;
   --color-border-custom: #ebebeb;
   --color-bg-subtle: #fbfbfb;
