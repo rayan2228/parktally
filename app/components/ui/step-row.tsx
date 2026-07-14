@@ -58,7 +58,7 @@ export default function StepRow({
         <p
           className="
             mt-4
-            text-zinc-500
+            text-primary-black
             leading-7
           "
         >

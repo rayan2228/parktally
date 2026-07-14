@@ -1,8 +1,8 @@
 "use client";
 
 import { Mail } from "lucide-react";
-import FadeUp from "./ui/fade-up";
 import Footer from "./footer";
+import FadeUp from "./ui/fade-up";
 
 export default function CTA() {
     return (
@@ -17,16 +17,14 @@ export default function CTA() {
       "
         >
             <FadeUp>
-                <h2 className="mx-auto max-w-5xl text-5xl font-semibold">
-                    Let's Make Your Parking
-                    System More Profitable
+                <h2 className="mx-auto max-w-3xl text-5xl font-semibold">
+                    Let’s Build a Smarter Parking System Together
                 </h2>
             </FadeUp>
 
             <FadeUp delay={0.1}>
-                <p className="mx-auto mt-6 max-w-2xl text-zinc-500">
-                    Talk with our team and discover how AI-powered
-                    parking management can increase your revenue.
+                <p className="mx-auto mt-6 max-w-2xl text-primary-black">
+                    Drop your email below to get in touch with our team and get a personalized demo for your business. Let’s take your parking operations to the next level.
                 </p>
             </FadeUp>
 
@@ -75,7 +73,7 @@ export default function CTA() {
                 </div>
             </FadeUp>
             <Footer />
-            <div className=" text-center text-sm text-zinc-500 py-8">
+            <div className=" text-center text-sm text-primary-black py-8">
                 © 2026 ParkTally. All rights reserved     |     Powered by Wings, Institute of Research, Innovation, Incubation and Commercialization
             </div>
         </section>

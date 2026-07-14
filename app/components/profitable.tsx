@@ -6,12 +6,12 @@ import SectionTitle from "./ui/section-title";
 
 export default function Profitable() {
     return (
-        <Section className="bg-[#f9f9f9]">
+        <Section className="bg-white">
             <Container>
                 <FadeUp>
                     <SectionTitle
                         title="Let's Make Your Parking System More Profitable"
-                        description="Lorem ipsum dolor sit amet consectetur. Nullam gravida scelerisque sit id augue urna nibh erat. Pretium varius odio cursus nulla nisi. Conse"
+                        description="Upgrade your facility with our all-in-one automation ecosystem. Seamlessly integrate hardware and cloud software to eliminate revenue leakage, lower operational overhead, and maximize daily turnover."
                     />
                 </FadeUp>
 
@@ -32,13 +32,12 @@ export default function Profitable() {
                                 Demonstration
                             </h3>
 
-                            <p className="mt-3 text-zinc-500 leading-7">
-                                See how ParkTally transforms traditional parking
-                                operations into a fully automated revenue machine.
+                            <p className="mt-3 text-primary-black leading-7">
+                                Experience how our intelligent ANPR cameras and automated barriers streamline entry and exit paths. Watch how the system automatically logs vehicles, calculates exact fees, and prevents manual tampering in real time.
                             </p>
 
                             <button className="mt-6 w-full rounded-xl bg-primary py-4 text-white">
-                                Request Demo
+                                Request For Demo
                             </button>
                         </div>
                     </FadeUp>
@@ -49,8 +48,8 @@ export default function Profitable() {
                             width={275}
                             height={238}
                             title="Hardware Device"
-                            description="AI Camera, Barrier Gate and Vehicle Detection Hardware."
-                            button="Buy Now"
+                            description="Connect your existing gates to the cloud with our secure IoT gateway. Enjoy fast offline processing, multi-port scalability, and zero downtime."
+                            button="Order Now"
                         />
 
                         <ProductCard
@@ -58,7 +57,7 @@ export default function Profitable() {
                             width={275}
                             height={238}
                             title="Dashboard Software"
-                            description="Monitor parking operations from anywhere in real time."
+                            description="Monitor operations from anywhere. Track live occupancy, view real-time revenue analytics, and access tamper-proof audit logs on any device."
                             button="Go To Dashboard"
                         />
                     </div>
@@ -100,7 +99,7 @@ function ProductCard({
                             {title}
                         </h3>
 
-                        <p className="mt-3 text-zinc-500 leading-7">
+                        <p className="mt-3 text-primary-black leading-7">
                             {description}
                         </p>
                     </div>
