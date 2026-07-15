@@ -74,7 +74,7 @@ const RoadScene = () => {
             className="absolute right-[70%] top-[10%] w-[380%] origin-right -translate-y-1/2 rotate-6"
           >
             <Image
-              src="/images/camera-ray.png"
+              src="/images/camera-ray.svg"
               alt=""
               width={513}
               height={157}

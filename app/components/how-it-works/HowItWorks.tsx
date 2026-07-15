@@ -167,23 +167,26 @@ export default function HowItWorks() {
       aria-label="How our parking system works"
     >
 
-      <div className="grid h-full grid-cols-1 items-center gap-4 px-[6%]  md:grid-cols-2 md:gap-12">
-        <div className="h-40% md:h-full">
+      <div className="grid h-full grid-cols-1 items-center gap-4 px-[6%]  md:grid-cols-2 md:gap-12 max-w-7xl mx-auto">
+        <div className="hidden h-full md:block">
           <RoadScene />
         </div>
 
-        <div className="relative h-[45%] w-full  md:h-[60%]">
+        <div className="relative flex h-full w-full flex-col justify-center gap-5 md:h-[60%] md:justify-start">
           <h2 className="font-poppins m-0 max-w-127.5 text-3xl font-semibold capitalize leading-[1.1] text-black md:text-5xl">
             How to work our system
           </h2>
-          {steps.map((step, i) => (
-            <StepContent
-              key={step.id}
-              step={step}
-              active={i === activeIndex}
-              onCtaClick={scrollToCta}
-            />
-          ))}
+
+          <div className="relative flex-1">
+            {steps.map((step, i) => (
+              <StepContent
+                key={step.id}
+                step={step}
+                active={i === activeIndex}
+                onCtaClick={scrollToCta}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

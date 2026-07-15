@@ -98,16 +98,16 @@ function TableRow({
     improvement,
 }: TableRowProps) {
     return (
-        <tr className="border-b border-zinc-200 text-sm text-zinc-600">
+        <tr className="border-b border-zinc-200 text-sm text-primary-black">
             <td className="py-5">{feature}</td>
 
             <td className="py-5">{manual}</td>
 
-            <td className="py-5 font-medium text-emerald-600">
+            <td className="py-5 font-medium text-primary-black">
                 {automated}
             </td>
 
-            <td className="py-5 font-semibold text-blue-600">
+            <td className="py-5 font-semibold text-primary-black">
                 {improvement}
             </td>
         </tr>
