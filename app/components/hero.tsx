@@ -1,11 +1,9 @@
 import Image from "next/image";
-import Navbar from "./navbar";
 import FadeUp from "./ui/fade-up";
 
 export default function Hero() {
     return (
-        <section className="mt-12 relative bg-linear-to-l from-[#F9F9F9] to-[#F8F8F8]">
-            <Navbar />
+        <section className="relative bg-linear-to-l from-[#F9F9F9] to-[#F8F8F8] 2xl:top-5 xl:top-18 lg:top-30">
             <FadeUp>
                 <div
                     className="

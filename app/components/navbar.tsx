@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-import useScroll from "../hooks/use-scroll";
+
 import { NAV_LINKS } from "../lib/constants";
 import Container from "./ui/container";
 import Image from "next/image";
@@ -12,29 +12,40 @@ import Image from "next/image";
 export default function Navbar() {
     const [open, setOpen] = useState(false);
 
-    const scrolled = useScroll();
 
     return (
         <>
             <nav
                 className={`
-                    absolute
-                    w-full
+                    lg:absolute
                     z-50
                     transition-all
                     duration-300
+                    lg:left-1/2
+                    lg:-translate-x-1/2
+                    w-dvw
                 `}
             >
                 <Container>
-                    <div className="flex flex-col items-center justify-center">
+                    <div
+                        className="
+                            flex
+                            items-center
+                            justify-between
+                            py-4
+                            lg:flex-col
+                            lg:justify-center
+                            lg:py-6
+                        "
+                    >
                         <Link
                             href="/"
-                            className="text-2xl font-bold tracking-tight mb-2"
+                            className="text-2xl font-bold tracking-tight lg:mb-2"
                         >
                             <Image src={"/images/logo.png"} className="w-auto h-auto" width={120} height={35} alt="parktally logo" loading="eager" />
                         </Link>
 
-                        <div className="hidden items-center gap-2 md:flex">
+                        <div className="hidden items-center gap-2 lg:flex">
                             {NAV_LINKS.map((item) => (
                                 <Link
                                     key={item.label}
@@ -56,18 +67,13 @@ export default function Navbar() {
                             ))}
                         </div>
 
-                        {/* ✅ Mobile hamburger — only change here */}
                         <button
                             onClick={() => setOpen(true)}
                             className="
-                                absolute
-                                right-4
-                                top-1/2
-                                -translate-y-1/2
                                 flex
                                 items-center
                                 justify-center
-                                md:hidden
+                                lg:hidden
                             "
                             aria-label="Open menu"
                         >
