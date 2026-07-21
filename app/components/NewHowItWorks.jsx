@@ -566,7 +566,7 @@ export default function NewHowItWorks() {
             </div>
 
             {/* Camera + detection ray */}
-            <div data-camera className="absolute right-[2%] top-[66%] w-[14%] will-change-transform">
+            <div data-camera className="absolute right-[10%] top-[65%] w-[16%] will-change-transform">
               <div
                 data-ray
                 className="absolute right-[70%] top-[10%] w-[380%] origin-right -translate-y-1/2 rotate-6"
